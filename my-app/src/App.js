@@ -1,12 +1,18 @@
 
-import './App.css';
+
+import { useForm } from 'react-hook-form';
+
+
 
 function App() {
+  const {register, handleSubmit} = useForm()
+
+  const onSubmit = ({ data }) => {}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
+    <div> 
+
+      <form onSubmit = {handleSubmit(onSubmit)}></form>
     </div>
   );
 }
