@@ -1,18 +1,26 @@
-
-
-import { useForm } from 'react-hook-form';
-
+import {useForm} from 'react-hook-form'
 
 
 function App() {
-  const {register, handleSubmit} = useForm()
+  const{
+    register,
+    formState: {
+      errors
+    },
+    handleSubmit
+  } = useForm();
 
-  const onSubmit = ({ data }) => {}
-
+    const onSubmit = (data) => {}
+      alert(JSON.stringify(data))
   return (
-    <div> 
+    <div className='App'>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          {...register('')}
+        />
 
-      <form onSubmit = {handleSubmit(onSubmit)}></form>
+        <input type='submit'/>
+      </form>
     </div>
   );
 }
