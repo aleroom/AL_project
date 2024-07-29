@@ -20,36 +20,37 @@ function App() {
   return (
     <div className='App'>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label >        
+      
+        <label  >        
           Login
           <input
             {...register("login", {
-              required: "Поле обязательно к заполнению",
+              required: "This field is required",
               minLength: {
                 value: 3,
-                message: "Минимум 3 символа"
+                message: "Minimum 3 symbols"
               },
               maxLength: {
                 value: 7,
-                message: "Максимум 7 символов"
+                message: "Up to 7 symbols"
               }
 
             })}
           />
         </label>
 
-        <label >        
+        <label>        
           Password
-          <input
+           <input
             {...register("password", {
-              required: "Поле обязательно к заполнению",
+              required: "This field is required",
               minLength: {
                 value: 6,
-                message: "Минимум 6 символа"
+                message: "Minimum 4 symbols"
               },
               maxLength: {
                 value: 9,
-                message: "Максимум 9 символов"
+                message: "Up to 6 symbols"
               }
 
             })}
